@@ -23,9 +23,13 @@ class Game{
             form.display();
         }
         car1 = createSprite(100,200);
+        car1.addImage("car1Img",car1Img);
         car2 = createSprite(300,200);
+        car2.addImage("car2Img",car2Img);
         car3 = createSprite(500,200);
+        car3.addImage("car3Img",car3Img);
         car4 = createSprite(700,200);
+        car4.addImage("car4Img",car4Img);
         carArray.push(car1);
         carArray.push(car2);
         carArray.push(car3);

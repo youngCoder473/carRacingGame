@@ -27,8 +27,12 @@ function draw(){
   if(playerCount==4){
     game.updateGameState(1);
   }
+
   if(gameState == 1){
     clear();
     game.play();
+  }
+  if(gameState == 2){
+    game.end();
   }
 }

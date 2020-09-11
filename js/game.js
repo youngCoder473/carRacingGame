@@ -40,10 +40,11 @@ class Game{
         text("Start!",200,200);
         Player.getPlayerInfo();
         if(allPlayers != undefined){
+            background("orange");
+            image(trackImage,0,-displayHeight*4,displayWidth,displayHeight*5);
             var arrayIndex = 0
-            var x = 0
+            var x = 175
             var y = 0
-            var displayPosition = 130;
             for(var i in allPlayers){
                 arrayIndex +=1
                 x +=200
@@ -54,6 +55,9 @@ class Game{
                     carArray[arrayIndex-1].shapeColor = "red"
                     camera.position.x = displayWidth/2
                     camera.position.y = carArray[arrayIndex-1].y;
+                    stroke(10);
+                    fill("black");
+                    ellipse(x,y,60,60);
                 }
                 else{
                     carArray[arrayIndex-1].shapeColor = "black"
@@ -64,7 +68,14 @@ class Game{
         if(keyDown(UP_ARROW) && player.playerCountPosition!=null){
             player.distance+=50;
             player.updatePlayer();
+            console.log(player.distance);
+        }
+        if(player.distance == 3650){
+            gameState = 2
         }
         drawSprites();
+    }
+    end(){
+        alert("Game Over");
     }
 }

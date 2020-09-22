@@ -39,6 +39,7 @@ class Game{
         form.hide();
         text("Start!",200,200);
         Player.getPlayerInfo();
+        player.getCarReached();
         if(allPlayers != undefined){
             background("orange");
             image(trackImage,0,-displayHeight*4,displayWidth,displayHeight*5);
@@ -70,12 +71,21 @@ class Game{
             player.updatePlayer();
             console.log(player.distance);
         }
-        if(player.distance == 3650){
-            gameState = 2
-        }
+        for(var i in allPlayers){
+                if(player.name == allPlayers[i].name && player.distance == 3650){
+                    carReached++
+                    Player.updateCarReached(carReached);
+                    gameState = 2
+                }
+                player.rank = carReached
+                console.log(allPlayers[i].name)
+            }
+        
+        
         drawSprites();
     }
     end(){
-        alert("Game Over");
+        alert("Game Over"+" your rank is"+ player.rank);
+
     }
 }

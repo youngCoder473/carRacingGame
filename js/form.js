@@ -20,6 +20,7 @@ class Form{
           player.updatePlayerCount(0);
           game.updateGameState(0);
           database.ref("/").child("Players").remove()
+         Player.updateCarReached(0);
       })
     
 

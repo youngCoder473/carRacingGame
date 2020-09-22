@@ -3,7 +3,7 @@ var gameState = 0
 var playerCount = 0
 var game,form,player,allPlayers;
 var car1,car2,car3,car4,carArray
-var car1Img,car2Img,car3Img,car4Img,trackImg;
+var car1Img,car2Img,car3Img,car4Img,trackImg, rank, carReached;
 
 function preload(){
 car1Img = loadImage("images/car1.png");
